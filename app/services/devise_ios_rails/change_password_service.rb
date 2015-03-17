@@ -10,6 +10,7 @@ module DeviseIosRails
       return if current_user.nil?
       current_user.password = snake_case_params[:password]
       current_user.password_confirmation = snake_case_params[:password_confirmation]
+      current_user.authentication_token = nil
       current_user.save
       current_user
     end
